@@ -19,7 +19,7 @@ body {
 /* Header com gradiente roxo/preto para beleza */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Garante espaçamento simétrico entre left, center e right */
     align-items: center;
     background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo para preto */
     padding: 20px 30px; /* Mais espaçamento para acomodar título maior */
@@ -28,11 +28,15 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave para profundidade */
 }
 
-/* Ajustes para elementos do header */
-.header-left, .header-right {
+/* Ajustes para elementos do header com simetria */
+.header-left {
     flex: 1;
-    display: flex;
-    align-items: center; /* Alinha verticalmente com o título */
+    text-align: left; /* Coloca o Discord totalmente à esquerda */
+}
+
+.header-right {
+    flex: 1;
+    text-align: right; /* Coloca a foto totalmente à direita, simétrica ao Discord */
 }
 
 .header-center {
@@ -94,11 +98,11 @@ h1 {
     box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte no hover */
 }
 
-/* Nova seção para banner animado */
+/* Seção para banner animado - width alterado para 50% e centralizado */
 .banner {
-    width: 100%; /* Full-width */
-    max-width: 1200px; /* Mesma largura máxima do main */
-    margin: 20px auto 30px auto; /* Espaçamento abaixo do header e acima do main */
+    width: 50%; /* Alterado para 50%, conforme sua mudança */
+    max-width: 1200px; /* Mesma largura máxima do main, mas limitado a 50% */
+    margin: 20px auto 30px auto; /* Centralizado horizontalmente com espaçamento */
     background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo/preto para combinar com o tema */
     border-radius: 12px; /* Bordas arredondadas */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
@@ -197,6 +201,7 @@ footer {
     }
 
     .banner {
+        width: 100%; /* Em mobile, volta para 100% para melhor usabilidade (ajuste se preferir manter 50%) */
         margin: 10px auto 20px auto; /* Ajuste para mobile */
     }
 
