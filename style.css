@@ -71,12 +71,13 @@ h1 {
     100% { opacity: 1; transform: scale(1); }
 }
 
-/* Ícone de Discord à esquerda com glow */
+/* Ícone de Discord à esquerda com glow e cursor pointer para indicar clicável */
 .discord-icon {
     width: 60px; /* Ligeiramente maior */
     height: auto;
     filter: drop-shadow(0 0 5px #ab47bc); /* Glow roxo sutil */
     transition: transform 0.3s ease; /* Transição suave */
+    cursor: pointer; /* Indica que é clicável */
 }
 
 .discord-icon:hover {
