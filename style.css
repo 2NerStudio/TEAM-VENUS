@@ -213,23 +213,55 @@ h2 {
 
 /* Estilos para a imagem do formulário (clicável e horizontal) */
 .form-image {
-    width: 25%; /* Full-width para horizontal */
+    width: 25%; /* Alterado para 25%, conforme sua mudança */
     height: auto; /* Mantém proporção */
     display: block;
+    margin: 0 auto; /* Centraliza a imagem */
     border-radius: 8px; /* Bordas arredondadas */
     box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow roxo */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer; /* Indica clicável */
-    margin: 15px auto 0 auto; /* Centraliza horizontalmente */
-}
-
-.preguica {
-    text-align: center;
+    margin-top: 15px; /* Espaçamento acima */
 }
 
 .form-image:hover {
     transform: scale(1.02); /* Leve zoom no hover */
     box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte */
+}
+
+/* Nova classe preguica para centralizar texto */
+.preguica {
+    text-align: center;
+}
+
+/* Estilos para ícones de redes sociais */
+.social-icon {
+    width: 50px; /* Tamanho fixo para ícones */
+    height: 50px;
+    border-radius: 50%; /* Circular para ícones */
+    margin-right: 10px; /* Espaçamento ao lado do texto */
+    filter: drop-shadow(0 0 5px #ab47bc); /* Glow roxo */
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Indica clicável */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Zoom no hover */
+}
+
+/* Ajustes para a lista de redes sociais */
+#bibliografia ul {
+    list-style-type: none; /* Remove bullets para visual clean */
+    padding: 0;
+    text-align: center; /* Centraliza itens */
+}
+
+#bibliografia li {
+    margin-bottom: 20px; /* Espaçamento entre itens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em; /* Tamanho do texto curto */
 }
 
 ul {
@@ -301,6 +333,16 @@ footer {
     }
 
     .form-image {
+        width: 50%; /* Ajuste para mobile: maior que 25% para usabilidade */
         margin-top: 10px; /* Ajuste para mobile */
+    }
+
+    #bibliografia li {
+        flex-direction: column; /* Empilha ícone e texto em mobile */
+        text-align: center;
+    }
+
+    .social-icon {
+        margin: 0 auto 10px auto; /* Centraliza ícone em mobile */
     }
 }
