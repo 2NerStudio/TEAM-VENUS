@@ -273,6 +273,28 @@ h2 {
     font-size: 0.9em;
 }
 
+/* Botão para Site de Avisos */
+.btn-avisos {
+    display: block;
+    width: max-content;
+    margin: 20px auto 0 auto; /* Centralizado */
+    padding: 12px 24px;
+    background-color: #6a1b9a; /* Roxo escuro */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow inicial */
+}
+
+.btn-avisos:hover {
+    background-color: #ab47bc; /* Roxo mais claro no hover */
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte */
+}
+
 ul {
     list-style-type: disc;
     margin-left: 25px;
@@ -353,5 +375,9 @@ footer {
 
     .social-icon {
         margin: 0 auto 10px auto; /* Centraliza ícone em mobile */
+    }
+
+    .btn-avisos {
+        width: 100%; /* Full-width em mobile */
     }
 }
