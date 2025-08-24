@@ -264,6 +264,15 @@ h2 {
     font-size: 1em; /* Tamanho do texto curto */
 }
 
+/* Instrução para clicar nos ícones */
+.social-instruction {
+    text-align: center;
+    margin-bottom: 15px; /* Espaçamento abaixo */
+    color: #e1bee7; /* Roxo claro para destaque */
+    font-style: italic; /* Leve itálico para ênfase */
+    font-size: 0.9em;
+}
+
 ul {
     list-style-type: disc;
     margin-left: 25px;
