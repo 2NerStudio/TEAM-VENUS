@@ -148,27 +148,67 @@ section:hover {
 }
 
 h2 {
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Mais espaço abaixo do título */
     color: #ab47bc; /* Roxo claro para títulos */
     font-weight: 700;
     text-transform: uppercase; /* Maiúsculas para estilo */
     letter-spacing: 1px; /* Espaçamento para elegância */
+    text-align: center; /* Centralizado para impacto visual */
 }
 
-/* Estilos específicos para a seção "sobre" para torná-la mais bonita */
+/* Estilos aprimorados para a seção "sobre" - mais agradável visualmente */
+#sobre {
+    background: linear-gradient(135deg, #1e1e1e, #2a1a3a); /* Gradiente sutil roxo escuro para fundo */
+    padding: 30px; /* Mais padding para "respiro" */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in suave para a seção */
+}
+
 #sobre p {
-    margin-bottom: 15px; /* Espaçamento entre parágrafos */
+    margin-bottom: 20px; /* Mais espaçamento entre parágrafos */
     text-align: justify; /* Alinhamento justificado para legibilidade */
     font-size: 1.1em; /* Ligeiramente maior para destaque */
+    line-height: 1.8; /* Mais espaço entre linhas para leitura agradável */
+    color: #e0e0e0; /* Cor clara */
 }
 
-#sobre p:last-child {
-    margin-bottom: 0; /* Remove margem do último parágrafo */
+#sobre p strong {
+    color: #e1bee7; /* Roxo claro para negritos, destacando frases chave */
 }
 
-/* Destaque sutil para emojis no texto */
-#sobre p span[role="img"] { /* Se precisar, adicione role="img" aos emojis no HTML; aqui é genérico */
-    filter: drop-shadow(0 0 3px #ab47bc); /* Glow roxo nos emojis */
+/* Destaque para emojis com glow e pulse */
+.emoji-highlight {
+    font-size: 1.5em; /* Maior tamanho para emojis */
+    filter: drop-shadow(0 0 5px #ab47bc); /* Glow roxo */
+    animation: emojiPulse 2s infinite alternate ease-in-out; /* Pulse sutil */
+    margin: 0 5px; /* Espaçamento ao redor */
+}
+
+/* Animação de pulse para emojis */
+@keyframes emojiPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Botão de chamada para Discord - visual atraente */
+.btn-discord {
+    display: block; /* Centraliza como bloco */
+    width: max-content; /* Ajusta à largura do texto */
+    margin: 20px auto 0 auto; /* Centralizado com espaçamento superior */
+    padding: 12px 24px;
+    background-color: #6a1b9a; /* Roxo escuro */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow inicial */
+}
+
+.btn-discord:hover {
+    background-color: #ab47bc; /* Roxo mais claro no hover */
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte */
 }
 
 ul {
@@ -226,8 +266,16 @@ footer {
         height: auto; /* Mantém responsivo */
     }
 
+    #sobre {
+        padding: 20px; /* Ajuste para mobile */
+    }
+
     #sobre p {
         font-size: 1em; /* Ajuste para mobile */
         text-align: left; /* Melhor legibilidade em telas pequenas */
+    }
+
+    .btn-discord {
+        width: 100%; /* Full-width em mobile para fácil clique */
     }
 }
