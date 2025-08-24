@@ -211,6 +211,23 @@ h2 {
     box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte */
 }
 
+/* Estilos para a imagem do formulário (clicável e horizontal) */
+.form-image {
+    width: 100%; /* Full-width para horizontal */
+    height: auto; /* Mantém proporção */
+    display: block;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow roxo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indica clicável */
+    margin-top: 15px; /* Espaçamento acima */
+}
+
+.form-image:hover {
+    transform: scale(1.02); /* Leve zoom no hover */
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte */
+}
+
 ul {
     list-style-type: disc;
     margin-left: 25px;
@@ -277,5 +294,9 @@ footer {
 
     .btn-discord {
         width: 100%; /* Full-width em mobile para fácil clique */
+    }
+
+    .form-image {
+        margin-top: 10px; /* Ajuste para mobile */
     }
 }
