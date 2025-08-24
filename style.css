@@ -213,7 +213,7 @@ h2 {
 
 /* Estilos para a imagem do formulário (clicável e horizontal) */
 .form-image {
-    width: 100%; /* Full-width para horizontal */
+    width: 60%; /* Full-width para horizontal */
     height: auto; /* Mantém proporção */
     display: block;
     border-radius: 8px; /* Bordas arredondadas */
