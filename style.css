@@ -1,3 +1,6 @@
+/* Import de fonte para torná-lo mais bonito */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 /* Reset básico para minimalismo */
 * {
     margin: 0;
@@ -6,24 +9,26 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Montserrat', sans-serif; /* Fonte mais elegante e moderna */
+    background-color: #121212; /* Fundo preto escuro para tema dark */
+    color: #e0e0e0; /* Texto claro para contraste */
     line-height: 1.6;
     padding: 20px;
 }
 
-/* Header */
+/* Header com gradiente roxo/preto para beleza */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007bff; /* Cor azul temática para Rocket League */
-    padding: 10px 20px;
+    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo para preto */
+    padding: 15px 30px; /* Mais espaçamento para elegância */
     color: white;
     position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave para profundidade */
 }
 
+/* Ajustes para elementos do header */
 .header-left, .header-right {
     flex: 1;
 }
@@ -34,62 +39,108 @@ header {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em; /* Maior para impacto */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra no texto para beleza */
 }
 
-/* Ícone de Discord à esquerda */
+/* Ícone de Discord à esquerda com glow */
 .discord-icon {
-    width: 50px; /* Tamanho ajustável */
+    width: 60px; /* Ligeiramente maior */
     height: auto;
+    filter: drop-shadow(0 0 5px #ab47bc); /* Glow roxo sutil */
+    transition: transform 0.3s ease; /* Transição suave */
 }
 
-/* Foto circular à direita */
+.discord-icon:hover {
+    transform: scale(1.1); /* Efeito de zoom no hover */
+}
+
+/* Foto circular à direita com borda glow */
 .foto-circular {
-    width: 80px; /* Tamanho ajustável */
-    height: 80px;
-    border-radius: 50%; /* Torna a imagem circular */
-    object-fit: cover; /* Mantém a proporção */
-    border: 2px solid white; /* Borda branca para destaque */
+    width: 90px; /* Ligeiramente maior para destaque */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ab47bc; /* Borda roxa */
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow roxo */
+    transition: box-shadow 0.3s ease;
+}
+
+.foto-circular:hover {
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte no hover */
 }
 
 /* Main content */
 main {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 30px auto; /* Mais margem para respiro */
 }
 
 section {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 50px; /* Mais espaço entre seções */
+    padding: 25px;
+    background-color: #1e1e1e; /* Fundo cinza escuro para seções */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+section:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover para interatividade */
 }
 
 h2 {
-    margin-bottom: 10px;
-    color: #007bff;
+    margin-bottom: 15px;
+    color: #ab47bc; /* Roxo claro para títulos */
+    font-weight: 700;
+    text-transform: uppercase; /* Maiúsculas para estilo */
+    letter-spacing: 1px; /* Espaçamento para elegância */
 }
 
 ul {
     list-style-type: disc;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 a {
-    color: #007bff;
+    color: #ab47bc; /* Roxo claro para links */
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: #e1bee7; /* Roxo mais claro no hover */
     text-decoration: underline;
 }
 
-/* Footer */
+/* Footer com gradiente */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 15px;
+    background: linear-gradient(135deg, #6a1b9a, #121212); /* Mesmo gradiente do header */
     color: white;
-    margin-top: 20px;
+    margin-top: 30px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5); /* Sombra superior */
+    font-size: 0.9em;
+}
+
+/* Media query para responsividade (mais bonito em mobile) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Empilha elementos em telas pequenas */
+        padding: 10px;
+    }
+
+    .header-center {
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    section {
+        padding: 15px;
+    }
 }
