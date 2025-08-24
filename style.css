@@ -71,10 +71,39 @@ h1 {
     box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte no hover */
 }
 
+/* Nova seção para banner animado */
+.banner {
+    width: 100%; /* Full-width */
+    max-width: 1200px; /* Mesma largura máxima do main */
+    margin: 20px auto 30px auto; /* Espaçamento abaixo do header e acima do main */
+    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo/preto para combinar com o tema */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    overflow: hidden; /* Evita que animações vazem */
+    animation: fadeIn 1s ease-in-out; /* Animação de fade-in para beleza */
+}
+
+.banner-img {
+    width: 100%; /* Preenche o container */
+    height: auto; /* Mantém proporção; ajuste para altura fixa se preferir (ex: 300px) */
+    display: block; /* Remove espaços indesejados */
+    transition: transform 0.5s ease; /* Transição suave para interatividade */
+}
+
+.banner:hover .banner-img {
+    transform: scale(1.05); /* Leve zoom no hover para efeito dinâmico */
+}
+
+/* Animação de fade-in para o banner */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Main content */
 main {
     max-width: 1200px;
-    margin: 30px auto; /* Mais margem para respiro */
+    margin: 0 auto 30px auto; /* Ajustado para não sobrepor o banner */
 }
 
 section {
@@ -142,5 +171,13 @@ footer {
 
     section {
         padding: 15px;
+    }
+
+    .banner {
+        margin: 10px auto 20px auto; /* Ajuste para mobile */
+    }
+
+    .banner-img {
+        height: auto; /* Mantém responsivo */
     }
 }
