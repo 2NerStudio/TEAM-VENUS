@@ -1,5 +1,5 @@
-/* Import de fonte para torná-lo mais bonito */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* Import de fontes para torná-lo mais bonito */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap');
 
 /* Reset básico para minimalismo */
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Fonte mais elegante e moderna */
+    font-family: 'Montserrat', sans-serif; /* Fonte principal */
     background-color: #121212; /* Fundo preto escuro para tema dark */
     color: #e0e0e0; /* Texto claro para contraste */
     line-height: 1.6;
@@ -22,7 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo para preto */
-    padding: 15px 30px; /* Mais espaçamento para elegância */
+    padding: 20px 30px; /* Mais espaçamento para acomodar título maior */
     color: white;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave para profundidade */
@@ -31,6 +31,8 @@ header {
 /* Ajustes para elementos do header */
 .header-left, .header-right {
     flex: 1;
+    display: flex;
+    align-items: center; /* Alinha verticalmente com o título */
 }
 
 .header-center {
@@ -38,10 +40,31 @@ header {
     text-align: center;
 }
 
+/* Estilos melhorados para o título Team Venus - MUITO mais bonito */
 h1 {
-    font-size: 2.5em; /* Maior para impacto */
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista/gaming */
+    font-size: 3em; /* Tamanho maior para impacto */
     font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra no texto para beleza */
+    text-transform: uppercase; /* Maiúsculas para estilo */
+    letter-spacing: 2px; /* Espaçamento entre letras para elegância */
+    background: linear-gradient(135deg, #e1bee7, #6a1b9a); /* Gradiente roxo no texto */
+    -webkit-background-clip: text; /* Clip para aplicar gradiente no texto */
+    -webkit-text-fill-color: transparent; /* Transparência para o gradiente */
+    text-shadow: 0 0 10px rgba(171, 71, 188, 0.7); /* Glow roxo base */
+    animation: titlePulse 2s infinite alternate ease-in-out, fadeInScale 1s ease-in-out; /* Animações de pulse e entrada */
+    margin: 0; /* Remove margens indesejadas */
+}
+
+/* Animação de pulse (glow pulsante) para o título */
+@keyframes titlePulse {
+    0% { text-shadow: 0 0 10px rgba(171, 71, 188, 0.7); }
+    100% { text-shadow: 0 0 20px rgba(171, 71, 188, 1); }
+}
+
+/* Animação de fade-in com escala para entrada do título */
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 /* Ícone de Discord à esquerda com glow */
@@ -166,7 +189,7 @@ footer {
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 2.2em; /* Reduz tamanho em mobile para caber melhor */
     }
 
     section {
