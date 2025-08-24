@@ -1,0 +1,95 @@
+/* Reset básico para minimalismo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff; /* Cor azul temática para Rocket League */
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+}
+
+.header-left, .header-right {
+    flex: 1;
+}
+
+.header-center {
+    flex: 2;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+/* Ícone de Discord à esquerda */
+.discord-icon {
+    width: 50px; /* Tamanho ajustável */
+    height: auto;
+}
+
+/* Foto circular à direita */
+.foto-circular {
+    width: 80px; /* Tamanho ajustável */
+    height: 80px;
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover; /* Mantém a proporção */
+    border: 2px solid white; /* Borda branca para destaque */
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    margin-top: 20px;
+}
