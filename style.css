@@ -220,7 +220,7 @@ h2 {
     box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow roxo */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer; /* Indica clicável */
-    margin-top: 15px; /* Espaçamento acima */
+    margin: 15px auto 0 auto; /* Centraliza horizontalmente */
 }
 
 .form-image:hover {
