@@ -1,487 +1,403 @@
-/* Import de fontes para torná-lo mais bonito - Expandido com mais opções para variações */
+/* Import de fontes para torná-lo mais bonito - Expandido com mais weights para variações tipográficas */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Orbitron:wght@500;700;900&display=swap');
 
-/* Reset básico para minimalismo - Expandido para mais elementos */
-* {
+/* Reset básico para minimalismo - Expandido para mais elementos e acessibilidade */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth; /* Suaviza scrolls para melhor UX */
+    transition: all 0.3s ease; /* Transição global suave para todos os elementos */
 }
 
 html {
-    font-size: 16px; /* Base para rem units */
+    scroll-behavior: smooth; /* Scroll suave para navegação por âncoras (abas) */
+    font-size: 16px; /* Base para rem units, facilitando escalabilidade */
 }
 
 body {
     font-family: 'Montserrat', sans-serif; /* Fonte principal - Leve e moderna */
     background-color: #121212; /* Fundo preto escuro para tema dark */
-    color: #e0e0e0; /* Texto claro para contraste */
+    color: #e0e0e0; /* Texto claro para contraste alto */
     line-height: 1.6;
     padding: 20px;
+    min-height: 100vh; /* Garante que o body cubra a tela inteira */
+    position: relative; /* Para posicionamento absoluto de elementos */
     overflow-x: hidden; /* Evita scrolls horizontais indesejados */
-    transition: background-color 0.5s ease; /* Transição suave para possíveis temas futuros */
+    background: linear-gradient(to bottom, #121212, #1e1e1e); /* Gradiente sutil black para cinza escuro no body */
+    animation: bodyFadeIn 2s ease-in-out; /* Animação de fade-in no carregamento da página */
 }
 
-/* Header com gradiente roxo/preto para beleza - Adicionado mais efeitos */
+/* Animação de fade-in para o body */
+@keyframes bodyFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Header com gradiente roxo/preto para beleza - Expandido com pseudo-elementos e animações */
 header {
     display: flex;
     justify-content: space-between; /* Garante espaçamento simétrico entre left, center e right */
     align-items: center;
     background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo para preto */
-    padding: 20px 30px; /* Mais espaçamento para acomodar título maior */
+    padding: 15px 30px; /* Mais espaçamento para elegância */
     color: white;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave para profundidade */
-    z-index: 10; /* Acima de outros elementos */
-    transition: box-shadow 0.3s ease, background 0.5s ease; /* Transições suaves */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(171, 71, 188, 0.2); /* Sombra suave com glow roxo */
+    z-index: 10; /* Acima do menu e conteúdo */
+    transition: box-shadow 0.3s ease, padding 0.3s ease; /* Transições suaves */
 }
 
-header:hover {
-    box-shadow: 0 6px 15px rgba(171, 71, 188, 0.3); /* Glow roxo no hover */
-}
-
-/* Ajustes para elementos do header com simetria - Adicionado flex-grow e aligns */
-.header-left {
-    flex: 1;
-    text-align: left; /* Coloca o Discord totalmente à esquerda */
-    display: flex;
-    align-items: center;
-}
-
-.header-right {
-    flex: 1;
-    text-align: right; /* Coloca a foto totalmente à direita, simétrica ao Discord */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.header-center {
-    flex: 2;
-    text-align: center;
-}
-
-/* Estilos melhorados para o título Team Venus - MUITO mais bonito - Adicionado mais sombras e animações */
-h1 {
-    font-family: 'Orbitron', sans-serif; /* Fonte futurista/gaming */
-    font-size: 3em; /* Tamanho maior para impacto */
-    font-weight: 900; /* Mais bold para destaque */
-    text-transform: uppercase; /* Maiúsculas para estilo */
-    letter-spacing: 3px; /* Mais espaçamento para elegância */
-    background: linear-gradient(135deg, #e1bee7, #6a1b9a); /* Gradiente roxo no texto */
-    -webkit-background-clip: text; /* Clip para aplicar gradiente no texto */
-    -webkit-text-fill-color: transparent; /* Transparência para o gradiente */
-    text-shadow: 0 0 10px rgba(171, 71, 188, 0.7), 0 0 20px rgba(171, 71, 188, 0.3); /* Glow roxo multi-camadas */
-    animation: titlePulse 2s infinite alternate ease-in-out, fadeInScale 1s ease-in-out; /* Animações de pulse e entrada */
-    margin: 0; /* Remove margens indesejadas */
-    transition: text-shadow 0.3s ease, letter-spacing 0.3s ease; /* Transições suaves */
-}
-
-h1:hover {
-    text-shadow: 0 0 15px rgba(171, 71, 188, 1), 0 0 25px rgba(171, 71, 188, 0.5); /* Glow mais intenso no hover */
-    letter-spacing: 4px; /* Expande letras no hover */
-}
-
-/* Animação de pulse (glow pulsante) para o título - Expandida com mais keyframes */
-@keyframes titlePulse {
-    0% { text-shadow: 0 0 10px rgba(171, 71, 188, 0.7), 0 0 20px rgba(171, 71, 188, 0.3); }
-    50% { text-shadow: 0 0 15px rgba(171, 71, 188, 0.9), 0 0 25px rgba(171, 71, 188, 0.4); }
-    100% { text-shadow: 0 0 20px rgba(171, 71, 188, 1), 0 0 30px rgba(171, 71, 188, 0.5); }
-}
-
-/* Animação de fade-in com escala para entrada do título - Adicionado opacity e rotate sutil */
-@keyframes fadeInScale {
-    0% { opacity: 0; transform: scale(0.9) rotate(-2deg); }
-    50% { opacity: 0.5; transform: scale(0.95) rotate(0deg); }
-    100% { opacity: 1; transform: scale(1) rotate(0deg); }
-}
-
-/* Ícone de Discord à esquerda com glow e cursor pointer para indicar clicável - Adicionado mais transições */
-.discord-icon {
-    width: 60px; /* Ligeiramente maior */
-    height: auto;
-    filter: drop-shadow(0 0 5px #ab47bc) brightness(1.1); /* Glow roxo com brilho */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Transição suave */
-    cursor: pointer; /* Indica que é clicável */
-}
-
-.discord-icon:hover {
-    transform: scale(1.1) rotate(5deg); /* Efeito de zoom e rotação no hover */
-    filter: drop-shadow(0 0 10px #ab47bc) brightness(1.2); /* Glow mais forte */
-}
-
-/* Foto circular à direita com borda glow - Adicionado border animation */
-.foto-circular {
-    width: 90px; /* Ligeiramente maior para destaque */
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ab47bc; /* Borda roxa */
-    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow roxo */
-    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.foto-circular:hover {
-    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), 0 0 20px rgba(171, 71, 188, 0.4); /* Glow multi-camadas */
-    border-color: #e1bee7; /* Muda borda para roxo claro no hover */
-    transform: rotate(5deg); /* Rotação sutil */
-}
-
-/* Seção para banner animado - width alterado para 50% e centralizado - Adicionado parallax e mais animações */
-.banner {
-    width: 50%; /* Alterado para 50%, conforme sua mudança */
-    max-width: 1200px; /* Mesma largura máxima do main, mas limitado a 50% */
-    margin: 20px auto 30px auto; /* Centralizado horizontalmente com espaçamento */
-    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo/preto para combinar com o tema */
-    border-radius: 12px; /* Bordas arredondadas */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(171, 71, 188, 0.2); /* Sombras multi-camadas */
-    overflow: hidden; /* Evita que animações vazem */
-    animation: fadeIn 1s ease-in-out, bannerPulse 3s infinite alternate ease-in-out; /* Animações combinadas */
-    position: relative; /* Para pseudo-elementos */
-}
-
-.banner::before {
+header::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(171, 71, 188, 0.1), transparent); /* Gradiente radial roxo sutil */
+    background: radial-gradient(circle, rgba(171, 71, 188, 0.1), transparent); /* Overlay radial roxo sutil */
     opacity: 0.5;
     transition: opacity 0.3s ease;
 }
 
-.banner:hover::before {
+header:hover::before {
     opacity: 0.8; /* Aumenta opacidade no hover para efeito neon */
 }
 
-.banner-img {
-    width: 100%; /* Preenche o container */
-    height: auto; /* Mantém proporção; ajuste para altura fixa se preferir (ex: 300px) */
-    display: block; /* Remove espaços indesejados */
-    transition: transform 0.5s ease, filter 0.5s ease; /* Transição suave para interatividade */
-    filter: brightness(1.1); /* Leve brilho */
+header:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(171, 71, 188, 0.3); /* Glow mais forte no hover */
+    padding: 20px 35px; /* Expande padding no hover para dinamismo */
 }
 
-.banner:hover .banner-img {
-    transform: scale(1.05) translateY(-5px); /* Leve zoom e movimento parallax no hover */
-    filter: brightness(1.2); /* Aumenta brilho */
+/* Ajustes para elementos do header - Adicionado flex e aligns para precisão */
+.header-left {
+    flex: 1;
+    text-align: left; /* Coloca o Discord totalmente à esquerda */
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
 }
 
-/* Animação de fade-in para o banner - Expandida */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    50% { opacity: 0.5; transform: translateY(10px); }
+.header-left:hover {
+    transform: translateX(-5px); /* Leve movimento no hover */
+}
+
+.header-right {
+    flex: 1;
+    text-align: right; /* Coloca a foto totalmente à direita */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: transform 0.3s ease;
+}
+
+.header-right:hover {
+    transform: translateX(5px); /* Leve movimento no hover */
+}
+
+.header-center {
+    flex: 2;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.header-center:hover {
+    transform: scale(1.05); /* Leve zoom no hover */
+}
+
+/* Título no header - Expandido com gradiente, glow e animação */
+h1 {
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista/gaming */
+    font-size: 2.5em; /* Maior para impacto */
+    font-weight: 900; /* Mais bold para destaque */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 10px rgba(171, 71, 188, 0.5); /* Sombra multi-camadas com glow roxo */
+    background: linear-gradient(135deg, #e1bee7, #ab47bc); /* Gradiente roxo no texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 2s infinite alternate ease-in-out; /* Animação de glow pulsante */
+    transition: font-size 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+    font-size: 2.6em; /* Ligeiro aumento no hover */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4), 0 0 15px rgba(171, 71, 188, 0.7); /* Glow mais intenso */
+}
+
+/* Animação de glow para título */
+@keyframes titleGlow {
+    0% { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 10px rgba(171, 71, 188, 0.5); }
+    100% { text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5), 0 0 15px rgba(171, 71, 188, 0.7); }
+}
+
+/* Ícone de Discord à esquerda com glow - Expandido com mais transições e pseudo */
+.discord-icon {
+    width: 60px; /* Ligeiramente maior */
+    height: auto;
+    filter: drop-shadow(0 0 5px #ab47bc) brightness(1.1); /* Glow roxo com brilho */
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease; /* Múltiplas transições */
+    position: relative; /* Para pseudo */
+}
+
+.discord-icon::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(171, 71, 188, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.discord-icon:hover::after {
+    opacity: 1; /* Overlay glow no hover */
+}
+
+.discord-icon:hover {
+    transform: scale(1.1) rotate(5deg); /* Zoom e rotação no hover */
+    filter: drop-shadow(0 0 10px #ab47bc) brightness(1.2); /* Glow mais forte */
+    opacity: 0.9; /* Leve fade para efeito */
+}
+
+/* Foto circular à direita com borda glow - Expandido com animação de rotação */
+.foto-circular {
+    width: 90px; /* Ligeiramente maior para destaque */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ab47bc; /* Borda roxa */
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5), inset 0 0 5px rgba(0, 0, 0, 0.3); /* Glow externo e interno */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    animation: circularRotate 10s infinite linear; /* Rotação lenta contínua */
+}
+
+.foto-circular:hover {
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
+    border-color: #e1bee7; /* Muda borda para roxo claro */
+    transform: scale(1.05); /* Zoom no hover */
+}
+
+/* Animação de rotação sutil para foto circular */
+@keyframes circularRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Menu de navegação (abas) - Expandido com gradientes, hovers e pseudo */
+.menu {
+    background: linear-gradient(to bottom, #1e1e1e, #2a1a3a); /* Gradiente cinza para purple escuro */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(171, 71, 188, 0.1); /* Sombra com glow */
+    position: sticky; /* Fixa o menu no topo ao scrollar */
+    top: 0;
+    z-index: 9; /* Abaixo do header, acima do conteúdo */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu:hover {
+    background: linear-gradient(to bottom, #2a1a3a, #1e1e1e); /* Inverte gradiente no hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4), 0 0 15px rgba(171, 71, 188, 0.2); /* Glow mais forte */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Responsivo para mobile */
+    gap: 20px; /* Espaçamento entre itens */
+}
+
+.menu li {
+    position: relative; /* Para pseudo */
+    transition: transform 0.3s ease;
+}
+
+.menu li::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ab47bc; /* Linha roxa */
+    transform: scaleX(0); /* Escondida inicialmente */
+    transition: transform 0.3s ease;
+}
+
+.menu li:hover::before {
+    transform: scaleX(1); /* Expande linha no hover */
+}
+
+.menu li:hover {
+    transform: translateY(-2px); /* Elevação no hover */
+}
+
+.menu a {
+    color: #ab47bc; /* Roxo claro */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu a:hover {
+    color: #e1bee7; /* Roxo mais claro no hover */
+    text-shadow: 0 0 5px rgba(171, 71, 188, 0.5); /* Glow no texto */
+}
+
+.menu a:active {
+    color: #6a1b9a; /* Purple escuro ao clicar */
+}
+
+/* Main content - Expandido com grid e animações */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    gap: 30px; /* Espaçamento entre seções */
+    animation: mainFadeIn 1.5s ease-in-out; /* Fade-in para main */
+}
+
+/* Animação de fade-in para main */
+@keyframes mainFadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Nova animação de pulse para banner */
-@keyframes bannerPulse {
-    0% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(171, 71, 188, 0.2); }
-    100% { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(171, 71, 188, 0.3); }
-}
-
-/* Main content - Adicionado gradiente de fundo e transições */
-main {
-    max-width: 1200px;
-    margin: 0 auto 30px auto; /* Ajustado para não sobrepor o banner */
-    background: linear-gradient(to bottom, #121212, #1e1e1e); /* Gradiente black para cinza escuro */
-    padding: 20px;
-    border-radius: 16px; /* Bordas suaves */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Sombra profunda */
-    transition: box-shadow 0.5s ease;
-}
-
-main:hover {
-    box-shadow: 0 0 25px rgba(171, 71, 188, 0.2); /* Glow roxo no hover */
-}
-
-/* Seções gerais - Adicionado hover e animações por seção */
+/* Seções (abas) - Expandido com overlays, animações e pseudo */
 section {
-    margin-bottom: 50px; /* Mais espaço entre seções */
+    margin-bottom: 50px;
     padding: 25px;
-    background-color: #1e1e1e; /* Fundo cinza escuro para seções */
-    border-radius: 12px; /* Bordas mais arredondadas */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(171, 71, 188, 0.1); /* Sombras externa e interna roxa */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transições multiplas */
-    position: relative; /* Para pseudo-elementos */
-    overflow: hidden; /* Para efeitos internos */
-}
-
-section:hover {
-    transform: translateY(-5px) scale(1.01); /* Efeito de elevação e leve zoom no hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(171, 71, 188, 0.2); /* Glow mais forte */
-    background-color: #2a1a3a; /* Muda para purple escuro no hover */
+    background-color: #1e1e1e; /* Fundo cinza escuro */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(171, 71, 188, 0.1); /* Sombra externa e glow interno roxo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Para overlays */
+    animation: sectionPulse 3s infinite alternate ease-in-out; /* Pulse sutil na seção */
 }
 
 section::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #6a1b9a, #ab47bc); /* Linha gradiente roxa na base */
-    opacity: 0.5;
-    transition: opacity 0.3s ease, height 0.3s ease;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(171, 71, 188, 0.05), transparent); /* Overlay gradiente roxo sutil */
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 section:hover::after {
-    opacity: 1;
-    height: 4px; /* Expande linha no hover */
+    opacity: 1; /* Ativa overlay no hover */
 }
 
-/* Títulos de seções - Adicionado glow e animação */
+section:hover {
+    transform: translateY(-5px) scale(1.01); /* Elevação e zoom no hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(171, 71, 188, 0.2); /* Glow mais forte */
+    background-color: #2a1a3a; /* Muda para purple escuro no hover */
+}
+
+/* Animação de pulse para seções */
+@keyframes sectionPulse {
+    0% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(171, 71, 188, 0.1); }
+    100% { box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35), inset 0 0 12px rgba(171, 71, 188, 0.15); }
+}
+
+/* Títulos de seções - Expandido com gradiente e glow */
 h2 {
-    margin-bottom: 20px; /* Mais espaço abaixo do título */
+    margin-bottom: 15px;
     color: #ab47bc; /* Roxo claro para títulos */
-    font-weight: 700;
-    text-transform: uppercase; /* Maiúsculas para estilo */
-    letter-spacing: 1px; /* Espaçamento para elegância */
-    text-align: center; /* Centralizado para impacto visual */
-    text-shadow: 0 0 5px rgba(171, 71, 188, 0.5); /* Glow roxo sutil */
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    font-size: 1.5em; /* Tamanho base */
-    font-family: 'Orbitron', sans-serif; /* Mesma fonte do título principal para consistência */
-}
-
-h2:hover {
-    color: #e1bee7; /* Roxo mais claro no hover */
-    text-shadow: 0 0 10px rgba(171, 71, 188, 0.8); /* Glow mais intenso */
-}
-
-/* Estilos aprimorados para a seção "sobre" - mais agradável visualmente - Expandido com mais efeitos */
-#sobre {
-    background: linear-gradient(135deg, #1e1e1e, #2a1a3a); /* Gradiente sutil roxo escuro para fundo */
-    padding: 30px; /* Mais padding para "respiro" */
-    animation: fadeIn 1.5s ease-in-out, sectionGlow 3s infinite alternate ease-in-out; /* Animações combinadas */
-}
-
-#sobre p {
-    margin-bottom: 20px; /* Mais espaçamento entre parágrafos */
-    text-align: justify; /* Alinhamento justificado para legibilidade */
-    font-size: 1.1em; /* Ligeiramente maior para destaque */
-    line-height: 1.8; /* Mais espaço entre linhas para leitura agradável */
-    color: #e0e0e0; /* Cor clara */
-    transition: color 0.3s ease; /* Transição para hover em parágrafos */
-}
-
-#sobre p:hover {
-    color: #ffffff; /* Branco puro no hover para destaque */
-}
-
-#sobre p strong {
-    color: #e1bee7; /* Roxo claro para negritos, destacando frases chave */
-    font-weight: 500; /* Semi-bold para variação */
-}
-
-/* Destaque para emojis com glow e pulse - Adicionado rotate sutil */
-.emoji-highlight {
-    font-size: 1.5em; /* Maior tamanho para emojis */
-    filter: drop-shadow(0 0 5px #ab47bc) brightness(1.2); /* Glow roxo com brilho */
-    animation: emojiPulse 2s infinite alternate ease-in-out, emojiRotate 5s infinite linear; /* Animações combinadas */
-    margin: 0 5px; /* Espaçamento ao redor */
-    display: inline-block; /* Para animações */
-}
-
-/* Animação de pulse para emojis */
-@keyframes emojiPulse {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
-}
-
-/* Nova animação de rotação sutil para emojis */
-@keyframes emojiRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Botão de chamada para Discord - visual atraente - Adicionado mais transições */
-.btn-discord {
-    display: block; /* Centraliza como bloco */
-    width: max-content; /* Ajusta à largura do texto */
-    margin: 20px auto 0 auto; /* Centralizado com espaçamento superior */
-    padding: 12px 24px;
-    background-color: #6a1b9a; /* Roxo escuro */
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
-    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow inicial */
+    text-align: center;
+    font-size: 1.8em; /* Maior para impacto */
+    background: linear-gradient(135deg, #e1bee7, #ab47bc); /* Gradiente no texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px rgba(171, 71, 188, 0.3); /* Glow sutil */
+    transition: text-shadow 0.3s ease, font-size 0.3s ease;
 }
 
-.btn-discord:hover {
-    background-color: #ab47bc; /* Roxo mais claro no hover */
-    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), 0 0 20px rgba(171, 71, 188, 0.4); /* Glow multi-camadas */
-    transform: translateY(-2px); /* Elevação no hover */
-    color: #ffffff; /* Branco puro */
+h2:hover {
+    text-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow mais forte */
+    font-size: 1.85em; /* Leve aumento no hover */
 }
 
-/* Estilos para a imagem do formulário (clicável e horizontal) - Adicionado mais efeitos */
-.form-image {
-    width: 25%; /* Alterado para 25%, conforme sua mudança */
-    height: auto; /* Mantém proporção */
-    display: block;
-    margin: 0 auto; /* Centraliza a imagem */
-    border-radius: 8px; /* Bordas arredondadas */
+/* Imagens de seções - Expandido com efeitos e responsividade */
+.section-image {
+    width: 45%; /* Largura ajustada */
+    height: auto;
+    border-radius: 8px;
+    margin: 20px auto 0 auto; /* Centraliza horizontalmente */
     box-shadow: 0 0 10px rgba(171, 71, 188, 0.5), 0 0 5px rgba(0, 0, 0, 0.3); /* Glow roxo e sombra black */
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-    cursor: pointer; /* Indica clicável */
-    margin-top: 15px; /* Espaçamento acima */
-    filter: brightness(1.05); /* Leve brilho */
+    display: block; /* Necessário para centralizar */
+    filter: brightness(1.05) saturate(1.1); /* Leve brilho e saturação */
 }
 
-.form-image:hover {
-    transform: scale(1.02) translateY(-3px); /* Zoom e elevação no hover */
+.section-image:hover {
+    transform: scale(1.05) translateY(-3px); /* Zoom e elevação no hover */
     box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), 0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
-    filter: brightness(1.1); /* Aumenta brilho */
+    filter: brightness(1.1) saturate(1.2); /* Aumenta efeitos */
 }
 
-/* Nova classe preguica para centralizar texto - Expandida com mais estilos */
+/* Classe preguica para centralizar texto - Expandida com estilos adicionais */
 .preguica {
     text-align: center;
     margin-bottom: 15px; /* Espaçamento abaixo */
     font-size: 1em;
     color: #e0e0e0;
-    transition: color 0.3s ease;
+    font-weight: 300; /* Leve para contraste */
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, font-size 0.3s ease, text-shadow 0.3s ease;
 }
 
 .preguica:hover {
     color: #e1bee7; /* Roxo claro no hover para interatividade */
+    font-size: 1.05em; /* Leve aumento */
+    text-shadow: 0 0 5px rgba(171, 71, 188, 0.3); /* Glow sutil */
 }
 
-/* Estilos para ícones de redes sociais - Adicionado mais transições */
-.social-icon {
-    width: 50px; /* Tamanho fixo para ícones */
-    height: 50px;
-    border-radius: 50%; /* Circular para ícones */
-    margin-right: 10px; /* Espaçamento ao lado do texto */
-    filter: drop-shadow(0 0 5px #ab47bc) saturate(1.2); /* Glow roxo com saturação */
-    transition: transform 0.3s ease, filter 0.3s ease;
-    cursor: pointer; /* Indica clicável */
-}
-
-.social-icon:hover {
-    transform: scale(1.1) rotate(10deg); /* Zoom e rotação no hover */
-    filter: drop-shadow(0 0 10px #ab47bc) saturate(1.5); /* Glow e saturação mais fortes */
-}
-
-/* Ajustes para a lista de redes sociais - Adicionado flex-wrap */
-#bibliografia ul {
-    list-style-type: none; /* Remove bullets para visual clean */
-    padding: 0;
-    text-align: center; /* Centraliza itens */
-    display: flex;
-    flex-direction: column; /* Coluna por padrão */
-    align-items: center;
-}
-
-#bibliografia li {
-    margin-bottom: 20px; /* Espaçamento entre itens */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em; /* Tamanho do texto curto */
-    transition: transform 0.3s ease; /* Transição para itens */
-    width: 100%; /* Full-width para centralização */
-}
-
-#bibliografia li:hover {
-    transform: translateX(5px); /* Leve movimento no hover */
-}
-
-/* Instrução para clicar nos ícones - Expandida */
-.social-instruction {
-    text-align: center;
-    margin-bottom: 15px; /* Espaçamento abaixo */
-    color: #e1bee7; /* Roxo claro para destaque */
-    font-style: italic; /* Leve itálico para ênfase */
-    font-size: 0.9em;
-    transition: color 0.3s ease, font-size 0.3s ease;
-}
-
-.social-instruction:hover {
-    color: #ffffff; /* Branco no hover */
-    font-size: 0.95em; /* Leve aumento */
-}
-
-/* Botão para Site de Avisos - Adicionado mais estilos */
-.btn-avisos {
-    display: block;
-    width: max-content;
-    margin: 20px auto 0 auto; /* Centralizado */
-    padding: 12px 24px;
-    background-color: #6a1b9a; /* Roxo escuro */
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, padding 0.3s ease;
-    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5), 0 0 5px rgba(0, 0, 0, 0.3); /* Glow multi */
-}
-
-.btn-avisos:hover {
-    background-color: #ab47bc; /* Roxo mais claro no hover */
-    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), 0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
-    transform: translateY(-2px) scale(1.05); /* Elevação e zoom */
-    padding: 14px 26px; /* Expande padding no hover */
-}
-
-/* Estilos gerais para listas - Expandido */
-ul {
-    list-style-type: disc;
-    margin-left: 25px;
-    color: #ab47bc; /* Roxo para bullets */
-    transition: color 0.3s ease;
-}
-
-ul:hover {
-    color: #e1bee7; /* Muda cor de bullets no hover */
-}
-
-/* Links gerais - Adicionado visited e focus states */
-a {
-    color: #ab47bc; /* Roxo claro para links */
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover {
-    color: #e1bee7; /* Roxo mais claro no hover */
-    text-shadow: 0 0 5px rgba(171, 71, 188, 0.5); /* Glow no hover */
-}
-
-a:visited {
-    color: #6a1b9a; /* Purple escuro para visitados */
-}
-
-a:focus {
-    outline: none;
-    box-shadow: 0 0 5px #ab47bc; /* Foco roxo */
-}
-
-/* Footer com gradiente - Expandido com mais efeitos */
+/* Footer com gradiente - Expandido com pseudo e animações */
 footer {
     text-align: center;
     padding: 15px;
-    background: linear-gradient(135deg, #6a1b9a, #121212); /* Mesmo gradiente do header */
+    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo/black */
     color: white;
     margin-top: 30px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5), 0 -2px 5px rgba(171, 71, 188, 0.2); /* Sombras superior e glow */
-    transition: box-shadow 0.3s ease, padding 0.3s ease;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5), 0 -2px 5px rgba(171, 71, 188, 0.2); /* Sombra superior com glow */
     position: relative;
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+    animation: footerPulse 4s infinite alternate ease-in-out; /* Pulse sutil */
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(171, 71, 188, 0.1), transparent); /* Overlay radial roxo */
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+footer:hover::before {
+    opacity: 0.8; /* Aumenta no hover */
 }
 
 footer:hover {
-    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.6), 0 -3px 10px rgba(171, 71, 188, 0.3); /* Glow mais forte */
     padding: 20px; /* Expande no hover */
+    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.6), 0 -3px 10px rgba(171, 71, 188, 0.3); /* Glow mais forte */
 }
 
 footer p {
@@ -494,16 +410,37 @@ footer p:hover {
     color: #e1bee7; /* Roxo claro no hover */
 }
 
-/* Nova animação geral para seções - Glow roxo pulsante */
-@keyframes sectionGlow {
-    0% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(171, 71, 188, 0.1); }
-    100% { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(171, 71, 188, 0.2); }
+footer a {
+    color: #ab47bc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-/* Media query para responsividade (mais bonito em mobile) - Expandida com mais breakpoints */
+footer a:hover {
+    color: #e1bee7;
+    text-decoration: underline; /* Underline no hover */
+}
+
+footer a:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ab47bc; /* Foco roxo para acessibilidade */
+}
+
+/* Animação de pulse para footer */
+@keyframes footerPulse {
+    0% { box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5), 0 -2px 5px rgba(171, 71, 188, 0.2); }
+    100% { box-shadow: 0 -5px 12px rgba(0, 0, 0, 0.55), 0 -3px 7px rgba(171, 71, 188, 0.25); }
+}
+
+/* Media query para responsividade (mobile <768px) - Expandida com ajustes finos */
 @media (max-width: 768px) {
     html {
-        font-size: 14px; /* Reduz base para mobile */
+        font-size: 14px; /* Reduz base para telas pequenas */
+    }
+
+    body {
+        padding: 10px; /* Menos padding em mobile */
     }
 
     header {
@@ -516,107 +453,135 @@ footer p:hover {
     }
 
     h1 {
-        font-size: 2.2em; /* Reduz tamanho em mobile para caber melhor */
-        letter-spacing: 2px; /* Ajuste para mobile */
+        font-size: 2em; /* Reduz tamanho em mobile */
+        letter-spacing: 0.5px; /* Ajuste espaçamento */
+    }
+
+    .menu {
+        position: static; /* Remove sticky em mobile para evitar sobreposições */
+    }
+
+    .menu ul {
+        flex-direction: column; /* Empilha itens do menu */
+        gap: 10px; /* Menos gap */
+    }
+
+    .menu li {
+        margin: 10px 0; /* Ajuste margem */
+    }
+
+    .menu a {
+        font-size: 1em; /* Reduz tamanho do texto */
+    }
+
+    main {
+        margin: 20px auto; /* Ajuste margem */
+        gap: 20px; /* Menos gap entre seções */
     }
 
     section {
-        padding: 15px;
+        padding: 15px; /* Reduz padding */
+        margin-bottom: 30px; /* Menos margem */
     }
 
-    .banner {
-        width: 100%; /* Em mobile, volta para 100% para melhor usabilidade (ajuste se preferir manter 50%) */
-        margin: 10px auto 20px auto; /* Ajuste para mobile */
+    h2 {
+        font-size: 1.5em; /* Reduz em mobile */
     }
 
-    .banner-img {
-        height: auto; /* Mantém responsivo */
+    .section-image {
+        width: 100%; /* Full-width em mobile para melhor visualização */
+        margin: 10px auto; /* Ajuste margem */
     }
 
-    #sobre {
-        padding: 20px; /* Ajuste para mobile */
-    }
-
-    #sobre p {
-        font-size: 1em; /* Ajuste para mobile */
-        text-align: left; /* Melhor legibilidade em telas pequenas */
-        line-height: 1.7; /* Ajuste linha */
-    }
-
-    .btn-discord {
-        width: 100%; /* Full-width em mobile para fácil clique */
-        padding: 10px 20px; /* Ajuste padding */
-    }
-
-    .form-image {
-        width: 50%; /* Ajuste para mobile: maior que 25% para usabilidade */
-        margin-top: 10px; /* Ajuste para mobile */
-    }
-
-    #bibliografia li {
-        flex-direction: column; /* Empilha ícone e texto em mobile */
-        text-align: center;
-    }
-
-    .social-icon {
-        margin: 0 auto 10px auto; /* Centraliza ícone em mobile */
-        width: 40px; /* Reduz tamanho em mobile */
-        height: 40px;
-    }
-
-    .btn-avisos {
-        width: 100%; /* Full-width em mobile */
-        padding: 10px 20px; /* Ajuste */
+    .preguica {
+        font-size: 0.9em; /* Reduz em mobile */
     }
 
     footer {
         padding: 10px; /* Reduz em mobile */
+        font-size: 0.8em; /* Menor texto */
     }
 }
 
-/* Media query adicional para tablets (entre 769px e 1024px) */
+/* Media query para tablets (769px a 1024px) - Adicionada para refinamento intermediário */
 @media (min-width: 769px) and (max-width: 1024px) {
     body {
-        padding: 15px; /* Ajuste padding */
+        padding: 15px; /* Padding intermediário */
+    }
+
+    header {
+        padding: 12px 25px; /* Ajuste */
     }
 
     h1 {
-        font-size: 2.5em; /* Tamanho intermediário */
+        font-size: 2.2em; /* Tamanho intermediário */
     }
 
-    .banner {
-        width: 70%; /* Ajuste para tablets */
+    .menu ul {
+        gap: 15px; /* Ajuste gap */
     }
 
     section {
-        padding: 20px; /* Ajuste */
+        padding: 20px; /* Intermediário */
     }
 
-    .form-image {
-        width: 35%; /* Ajuste intermediário */
-    }
-
-    .social-icon {
-        width: 45px; /* Ajuste tamanho */
-        height: 45px;
+    .section-image {
+        width: 60%; /* Ajuste largura para tablets */
     }
 }
 
-/* Media query para telas muito grandes (acima de 1200px) */
-@media (min-width: 1201px) {
+/* Media query para desktops grandes (>1025px) - Adicionada para otimização em telas amplas */
+@media (min-width: 1025px) {
+    body {
+        padding: 30px; /* Mais padding em telas grandes */
+    }
+
     main {
         max-width: 1400px; /* Expande para telas grandes */
     }
 
     h1 {
-        font-size: 3.5em; /* Maior em desktops grandes */
+        font-size: 3em; /* Maior em desktops */
+    }
+
+    .menu li {
+        margin: 0 20px; /* Mais espaço */
     }
 
     section {
-        padding: 35px; /* Mais espaço */
+        padding: 35px; /* Mais espaço interno */
     }
 
-    .btn-discord, .btn-avisos {
-        padding: 14px 28px; /* Maior em telas grandes */
+    .section-image {
+        width: 40%; /* Menor em telas grandes para layout amplo */
+    }
+}
+
+/* Media query para orientação landscape (ex: tablets horizontais) - Adicionada para versatilidade */
+@media (orientation: landscape) and (max-width: 1024px) {
+    .menu ul {
+        flex-direction: row; /* Mantém horizontal em landscape */
+        flex-wrap: nowrap; /* Evita wrap */
+        overflow-x: auto; /* Scroll horizontal se necessário */
+    }
+}
+
+/* Media query para high contrast mode (acessibilidade) - Adicionada para suporte */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #000000; /* Black puro para alto contraste */
+        color: #ffffff; /* Branco puro */
+    }
+
+    a {
+        text-decoration: underline; /* Underline sempre para visibilidade */
+    }
+}
+
+/* Media query para reduced motion (acessibilidade) - Desativa animações */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
     }
 }
