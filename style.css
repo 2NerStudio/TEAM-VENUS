@@ -416,7 +416,7 @@ h2:hover {
     display: block;
     width: max-content;
     margin: 20px auto 0 auto; /* Centralizado */
-    padding: 12px 24px;
+    padding: 12px 24px; /* Tamanho fixo */
     background-color: #6a1b9a; /* Roxo escuro */
     color: white;
     text-decoration: none;
@@ -424,16 +424,20 @@ h2:hover {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, padding 0.3s ease;
-    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5), 0 0 5px rgba(0, 0, 0, 0.3); /* Glow multi */
+    transition: background-color 0.3s ease, 
+                box-shadow 0.3s ease, 
+                transform 0.3s ease; /* removi padding da transição */
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5), 
+                0 0 5px rgba(0, 0, 0, 0.3); /* Glow multi */
 }
 
 .btn-avisos:hover {
     background-color: #ab47bc; /* Roxo mais claro no hover */
-    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), 0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), 
+                0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
     transform: translateY(-2px) scale(1.05); /* Elevação e zoom */
-    padding: 14px 26px; /* Expande padding no hover */
 }
+
 
 /* Estilos gerais para listas - Expandido */
 ul {
