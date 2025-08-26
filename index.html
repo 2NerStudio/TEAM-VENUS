@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de Avisos - Team Venus</title>
+    <title>Team Venus - Rocket League</title>
     <link rel="stylesheet" href="style.css"> <!-- Link para o CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet"> <!-- Fontes consistentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet"> <!-- Fontes: Montserrat e Orbitron para o título -->
 
     <!-- Ícone do site -->
     <link rel="icon" href="assets/pfp.png" type="image/png">
@@ -13,137 +13,76 @@
 <body>
     <header>
         <div class="header-left">
-            <a href="https://discord.gg/zsFae5QFPk" target="_blank" aria-label="Entrar no Discord da Team Venus">
-                <!-- Ícone SVG inline para Discord (melhor performance, com glow purple/black) -->
-                <svg class="discord-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.317 4.3698C18.779 3.6984 17.139 3.1704 15.438 3C15.243 3.3288 15.018 3.7824 14.869 4.176C13.076 3.924 11.924 3.924 10.131 4.176C9.982 3.7824 9.757 3.3288 9.562 3C7.861 3.1704 6.221 3.6984 4.683 4.3698C2.1 8.0692 1.5 11.6696 1.8 15.2192C3.338 16.3176 4.838 17.0664 6.338 17.5152C6.787 16.9164 7.186 16.2676 7.535 15.5692C6.887 15.3196 6.288 15.0204 5.738 14.6716C5.887 14.522 6.036 14.3724 6.185 14.2228C9.183 15.6696 14.817 15.6696 17.815 14.2228C17.964 14.3724 18.113 14.522 18.262 14.6716C17.712 15.0204 17.113 15.3196 16.465 15.5692C16.814 16.2676 17.213 16.9164 17.662 17.5152C19.162 17.0664 20.662 16.3176 22.2 15.2192C22.5 11.6696 21.9 8.0692 19.317 4.3698H20.317ZM8.5 13C7.7 13 7.1 12.3 7.1 11.5C7.1 10.7 7.8 10 8.5 10C9.3 10 9.9 10.7 9.9 11.5C9.9 12.3 9.3 13 8.5 13ZM15.5 13C14.7 13 14.1 12.3 14.1 11.5C14.1 10.7 14.8 10 15.5 10C16.3 10 16.9 10.7 16.9 11.5C16.9 12.3 16.3 13 15.5 13Z" fill="#ab47bc"/>
-                </svg>
+            <a href="https://discord.gg/zsFae5QFPk" target="_blank"> <!-- Link real do Discord -->
+                <img src="assets/discord-icon.png" alt="Ícone do Discord" class="discord-icon">
             </a>
         </div>
         <div class="header-center">
-            <h1>Site de Avisos - Team Venus</h1>
+            <h1>Team Venus</h1>
         </div>
         <div class="header-right">
-            <img src="assets/foto-time.jpg" alt="Foto do Time Team Venus" class="foto-circular">
+            <img src="assets/foto-time.jpg" alt="Foto do Time" class="foto-circular"> <!-- Atualizado para pasta assets -->
         </div>
     </header>
 
-    <!-- Menu de navegação (abas) -->
-    <nav class="menu">
-        <ul>
-            <li><a href="#avisos">Avisos Gerais</a></li>
-            <li><a href="#eventos">Calendário de Eventos</a></li>
-            <li><a href="#treinamentos">Treinamentos e Scrims</a></li>
-            <li><a href="#torneios">Torneios e Competições</a></li>
-            <li><a href="#atualizacoes">Atualizações da Equipe</a></li>
-            <li><a href="#contato">Contato e Suporte</a></li>
-        </ul>
-    </nav>
+    <!-- Seção para o banner animado, abaixo do header -->
+    <div class="banner">
+        <img src="assets/banner.gif" alt="Banner Animado do Team Venus" class="banner-img"> <!-- Já estava em assets; mantido -->
+    </div>
 
     <main>
-        <!-- Botão de toggle para modo neon (minha preferência para interatividade) -->
-        <button id="neon-toggle" aria-label="Alternar Modo Neon">🟣 Neon Mode</button>
+        <section id="sobre">
+            <h2>Sobre o Team Venus</h2>
+            <p><strong>O QUE É A TEAM VENUS?</strong> A Team Venus é uma equipe dedicada ao Rocket League competitivo, com o propósito de treinar, competir e evoluir juntos. <span class="emoji-highlight">🚗</span> Realizamos sessões de treinamento, scrims e torneios, sempre com foco no desenvolvimento individual e coletivo.</p>
+            <p>Para nós, mais importante do que a classificação é o <strong>comprometimento, a disciplina e a mentalidade competitiva</strong>. <span class="emoji-highlight">🚀</span> <strong>Todos os ranks são bem-vindos!</strong> Se você tem vontade de crescer no cenário competitivo, aqui é o seu lugar.</p>
+            <p>Além do ambiente de treino, oferecemos visibilidade aos jogadores através de clipes e conteúdos em nossas redes sociais (TikTok, YouTube e Instagram). Se você leva o jogo a sério e quer evoluir em equipe, a Team Venus está pronta para te receber. <span class="emoji-highlight">✨</span></p>
+            <p>As vagas estão abertas! Entre agora no nosso Discord e faça parte da nossa trajetória.</p>
+            <a href="https://discord.gg/zsFae5QFPk" target="_blank" class="btn-discord">Entre no Discord Agora!</a> <!-- Link real do Discord -->
+            <!-- Espaço para mais conteúdo sobre o time, se necessário -->
+        </section>
 
-        <!-- Seção 1: Avisos Gerais -->
-        <section id="avisos">
-            <h2>Avisos Gerais</h2>
-            <p class="preguica">Aqui estão os avisos mais recentes da Team Venus. Fique atualizado com novidades gerais!</p>
-            <ul class="avisos-lista">
-                <li><strong>01/10/2023:</strong> Reunião geral obrigatória no Discord às 20h.</li>
-                <li><strong>05/10/2023:</strong> Atualização de regras da equipe - leia no canal #regras.</li>
-                <li><strong>10/10/2023:</strong> Manutenção no servidor de treinos - indisponível das 14h às 16h.</li>
+        <section id="links"> <!-- Seção renomeada para Formulário de Entrada -->
+            <h2>Formulário de Entrada</h2>
+            <p class="preguica">Preencha o formulário abaixo para se candidatar à área profissional da Team Venus! Clique na imagem para acessar.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpNGSaZMiI_VYMSzmFdDSZrHzaw-A5u4VMxaF5ZwZV_Zkiog/viewform?usp=dialog" target="_blank">
+                <img src="assets/formulario-imagem.jpg" alt="Formulário de Entrada" class="form-image"> <!-- Placeholder para imagem horizontal; substitua o src pela sua imagem real em assets/ -->
+            </a>
+        </section>
+
+        <section id="bibliografia"> <!-- Seção substituída por Nossas Redes Sociais -->
+            <h2>Nossas Redes Sociais</h2>
+            <p class="social-instruction">Clique nos ícones para visitar nossas redes sociais!</p>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/@VenusTeamRL" target="_blank">
+                        <img src="assets/youtube-icon.png" alt="Ícone do YouTube" class="social-icon"> <!-- Placeholder: Coloque sua imagem real em assets/ -->
+                    </a>
+                    Siga-nos no YouTube para vídeos de gameplay e destaques da Team Venus!
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@venusrl_" target="_blank">
+                        <img src="assets/tiktok-icon.png" alt="Ícone do TikTok" class="social-icon"> <!-- Placeholder: Coloque sua imagem real em assets/ -->
+                    </a>
+                    Acompanhe clipes rápidos e conteúdos divertidos no TikTok da Team Venus!
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/venusteamrl/" target="_blank">
+                        <img src="assets/instagram-icon.png" alt="Ícone do Instagram" class="social-icon"> <!-- Placeholder: Coloque sua imagem real em assets/ -->
+                    </a>
+                    Veja fotos, stories e atualizações no Instagram da Team Venus!
+                </li>
             </ul>
-            <img src="assets/avisos-imagem.jpg" alt="Imagem de Avisos Gerais" class="section-image">
         </section>
 
-        <!-- Seção 2: Calendário de Eventos -->
-        <section id="eventos">
-            <h2>Calendário de Eventos</h2>
-            <p class="preguica">Confira as datas de eventos, treinos e mais.</p>
-            <table class="calendario-tabela">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Evento</th>
-                        <th>Horário</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>15/10/2023</td>
-                        <td>Treino Interno</td>
-                        <td>18:00</td>
-                    </tr>
-                    <tr>
-                        <td>20/10/2023</td>
-                        <td>Scrim vs Team Mars</td>
-                        <td>21:00</td>
-                    </tr>
-                    <tr>
-                        <td>25/10/2023</td>
-                        <td>Reunião Estratégica</td>
-                        <td>19:30</td>
-                    </tr>
-                </tbody>
-            </table>
-            <img src="assets/calendario-imagem.jpg" alt="Calendário de Eventos" class="section-image">
-        </section>
-
-        <!-- Seção 3: Treinamentos e Scrims -->
-        <section id="treinamentos">
-            <h2>Treinamentos e Scrims</h2>
-            <p class="preguica">Detalhes sobre sessões de treino e partidas scrim. Participe para evoluir!</p>
-            <ul class="treinamentos-lista">
-                <li><strong>Segunda e Quarta:</strong> Treino de Estratégia - 19h no Discord.</li>
-                <li><strong>Sexta:</strong> Scrim Aberta - Inscreva-se no canal #scrims.</li>
-                <li><strong>Domingo:</strong> Análise de Jogos - 20h, obrigatório para titulares.</li>
-            </ul>
-            <img src="assets/treinamentos-imagem.jpg" alt="Imagem de Treinamentos" class="section-image">
-        </section>
-
-        <!-- Seção 4: Torneios e Competições -->
-        <section id="torneios">
-            <h2>Torneios e Competições</h2>
-            <p class="preguica">Anúncios de torneios, inscrições e resultados da Team Venus.</p>
-            <ul class="torneios-lista">
-                <li><strong>Venus Cup 2023:</strong> Inscrições até 30/10. Prêmio: R$5.000.</li>
-                <li><strong>Resultado Último Torneio:</strong> 2º Lugar vs Team Earth.</li>
-                <li><strong>Próximo:</strong> 05/11 - Liga Nacional, prepare-se!</li>
-            </ul>
-            <img src="assets/torneios-imagem.jpg" alt="Imagem de Torneios" class="section-image">
-        </section>
-
-        <!-- Seção 5: Atualizações da Equipe -->
-        <section id="atualizacoes">
-            <h2>Atualizações da Equipe</h2>
-            <p class="preguica">Novidades sobre jogadores, recrutamentos e mudanças na equipe.</p>
-            <ul class="atualizacoes-lista">
-                <li><strong>Novo Membro:</strong> Bem-vindo ao jogador "NeonBlade"!</li>
-                <li><strong>Recrutamento:</strong> Vagas para suporte - envie CV no Discord.</li>
-                <li><strong>Atualização:</strong> Novo coach contratado para 2024.</li>
-            </ul>
-            <img src="assets/atualizacoes-imagem.jpg" alt="Imagem de Atualizações" class="section-image">
-        </section>
-
-        <!-- Seção 6: Contato e Suporte -->
-        <section id="contato">
-            <h2>Contato e Suporte</h2>
-            <p class="preguica">Entre em contato para dúvidas ou sugestões. Use o Discord ou o formulário abaixo!</p>
-            <form class="contato-form" action="#" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            <img src="assets/contato-imagem.jpg" alt="Imagem de Contato" class="section-image">
+        <section id="etc"> <!-- Seção substituída por Site De Avisos -->
+            <h2>Site De Avisos</h2>
+            <p>Acesse nosso site de avisos para ficar por dentro de tudo sobre a Team Venus, incluindo atualizações, eventos, treinamentos e mais!</p>
+            <a href="https://team-venus-avisos.vercel.app/" target="_blank" class="btn-avisos">Acesse o Site de Avisos</a> <!-- Placeholder: Substitua pelo link real quando criar o site -->
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Team Venus. Todos os direitos reservados. <a href="https://team-venus-rho.vercel.app/" target="_blank" title="Voltar ao Site Principal">Voltar ao Site Principal</a> | <a href="https://twitter.com/teamvenus" target="_blank">Twitter</a> | <a href="https://instagram.com/teamvenus" target="_blank">Instagram</a></p>
+        <p>&copy; 2025 Team Venus. Todos os direitos reservados.</p>
     </footer>
-
-    <script src="script.js"></script> <!-- Link para JS -->
 </body>
 </html>
