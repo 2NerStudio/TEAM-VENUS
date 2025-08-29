@@ -625,3 +625,52 @@ footer p:hover {
         padding: 14px 28px; /* Maior em telas grandes */
     }
 }
+
+/* ===== ADS (Adsterra) ===== */
+.ad-slot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1a;
+    border: 1px solid rgba(171, 71, 188, 0.25);
+    border-radius: 12px;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 100%;
+    box-shadow: inset 0 0 12px rgba(171, 71, 188, 0.15);
+    overflow: hidden;
+}
+
+.ad-slot .ad-label {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-size: 10px;
+    color: #e1bee7;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    pointer-events: none;
+}
+
+/* Tamanhos comuns */
+.ad-slot.leaderboard { max-width: 728px; min-height: 90px; }
+.ad-slot.footer-banner { max-width: 728px; min-height: 90px; }
+.ad-slot.mobile-banner { max-width: 320px; min-height: 50px; }
+.ad-slot.rectangle { max-width: 300px; min-height: 250px; }
+
+/* Controle responsivo de exibição */
+.only-desktop { display: none; }
+.only-mobile { display: block; }
+
+@media (min-width: 769px) {
+  .only-desktop { display: block; }
+  .only-mobile { display: none; }
+}
+
+/* Integra com seu tema no hover */
+.ad-slot:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(171, 71, 188, 0.2);
+    transform: translateY(-2px);
+}
