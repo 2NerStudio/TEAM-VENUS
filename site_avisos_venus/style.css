@@ -1,0 +1,701 @@
+/* Import de fontes para torná-lo mais bonito - Expandido com mais weights para variações tipográficas */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Orbitron:wght@500;700;900&display=swap');
+
+/* Reset básico para minimalismo - Expandido para mais elementos e acessibilidade */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Transição global suave para todos os elementos */
+}
+
+html {
+    scroll-behavior: smooth; /* Scroll suave para navegação por âncoras (abas) */
+    font-size: 16px; /* Base para rem units, facilitando escalabilidade */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Fonte principal - Leve e moderna */
+    background-color: #121212; /* Fundo preto escuro para tema dark */
+    color: #e0e0e0; /* Texto claro para contraste alto */
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh; /* Garante que o body cubra a tela inteira */
+    position: relative; /* Para posicionamento absoluto de elementos */
+    overflow-x: hidden; /* Evita scrolls horizontais indesejados */
+    background: linear-gradient(to bottom, #121212, #1e1e1e); /* Gradiente sutil black para cinza escuro no body */
+    animation: bodyFadeIn 2s ease-in-out; /* Animação de fade-in no carregamento da página */
+}
+
+/* Animação de fade-in para o body */
+@keyframes bodyFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Animação de fundo com "estrelas" neon purple/black (minha preferência para imersão) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(171, 71, 188, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(171, 71, 188, 0.05) 0%, transparent 50%);
+    animation: starsTwinkle 5s infinite alternate ease-in-out;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@keyframes starsTwinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 0.8; }
+}
+
+/* Header com gradiente roxo/preto para beleza - Expandido com pseudo-elementos e animações */
+header {
+    display: flex;
+    justify-content: space-between; /* Garante espaçamento simétrico entre left, center e right */
+    align-items: center;
+    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo para preto */
+    padding: 15px 30px; /* Mais espaçamento para elegância */
+    color: white;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(171, 71, 188, 0.2); /* Sombra suave com glow roxo */
+    z-index: 10; /* Acima do menu e conteúdo */
+    transition: box-shadow 0.3s ease, padding 0.3s ease; /* Transições suaves */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(171, 71, 188, 0.1), transparent); /* Overlay radial roxo sutil */
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+header:hover::before {
+    opacity: 0.8; /* Aumenta opacidade no hover para efeito neon */
+}
+
+header:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(171, 71, 188, 0.3); /* Glow mais forte no hover */
+    padding: 20px 35px; /* Expande padding no hover para dinamismo */
+}
+
+/* Ajustes para elementos do header - Adicionado flex e aligns para precisão */
+.header-left {
+    flex: 1;
+    text-align: left; /* Coloca o Discord totalmente à esquerda */
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.header-left:hover {
+    transform: translateX(-5px); /* Leve movimento no hover */
+}
+
+.header-right {
+    flex: 1;
+    text-align: right; /* Coloca a foto totalmente à direita */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: transform 0.3s ease;
+}
+
+.header-right:hover {
+    transform: translateX(5px); /* Leve movimento no hover */
+}
+
+.header-center {
+    flex: 2;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.header-center:hover {
+    transform: scale(1.05); /* Leve zoom no hover */
+}
+
+/* Título no header - Expandido com gradiente, glow e animação */
+h1 {
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista/gaming */
+    font-size: 2.5em; /* Maior para impacto */
+    font-weight: 900; /* Mais bold para destaque */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 10px rgba(171, 71, 188, 0.5); /* Sombra multi-camadas com glow roxo */
+    background: linear-gradient(135deg, #e1bee7, #ab47bc); /* Gradiente roxo no texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 2s infinite alternate ease-in-out; /* Animação de glow pulsante */
+    transition: font-size 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+    font-size: 2.6em; /* Ligeiro aumento no hover */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4), 0 0 15px rgba(171, 71, 188, 0.7); /* Glow mais intenso */
+}
+
+/* Animação de glow para título */
+@keyframes titleGlow {
+    0% { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 0 0 10px rgba(171, 71, 188, 0.5); }
+    100% { text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5), 0 0 15px rgba(171, 71, 188, 0.7); }
+}
+
+/* Ícone de Discord à esquerda com glow - Expandido com mais transições e pseudo (agora SVG inline no HTML) */
+.discord-icon {
+    width: 60px; /* Ligeiramente maior */
+    height: auto;
+    filter: drop-shadow(0 0 5px #ab47bc) brightness(1.1); /* Glow roxo com brilho */
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease; /* Múltiplas transições */
+    position: relative; /* Para pseudo */
+}
+
+.discord-icon::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(171, 71, 188, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.discord-icon:hover::after {
+    opacity: 1; /* Overlay glow no hover */
+}
+
+.discord-icon:hover {
+    transform: scale(1.1) rotate(5deg); /* Zoom e rotação no hover */
+    filter: drop-shadow(0 0 10px #ab47bc) brightness(1.2); /* Glow mais forte */
+    opacity: 0.9; /* Leve fade para efeito */
+}
+
+/* Foto circular à direita com borda glow - Expandido com animação de rotação */
+.foto-circular {
+    width: 90px; /* Ligeiramente maior para destaque */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ab47bc; /* Borda roxa */
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5), inset 0 0 5px rgba(0, 0, 0, 0.3); /* Glow externo e interno */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    animation: circularRotate 10s infinite linear; /* Rotação lenta contínua */
+}
+
+.foto-circular:hover {
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
+    border-color: #e1bee7; /* Muda borda para roxo claro */
+    transform: scale(1.05); /* Zoom no hover */
+}
+
+/* Animação de rotação sutil para foto circular */
+@keyframes circularRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Menu de navegação (abas) - Expandido com gradientes, hovers e pseudo */
+.menu {
+    background: linear-gradient(to bottom, #1e1e1e, #2a1a3a); /* Gradiente cinza para purple escuro */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(171, 71, 188, 0.1); /* Sombra com glow */
+    position: sticky; /* Fixa o menu no topo ao scrollar */
+    top: 0;
+    z-index: 9; /* Abaixo do header, acima do conteúdo */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu:hover {
+    background: linear-gradient(to bottom, #2a1a3a, #1e1e1e); /* Inverte gradiente no hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4), 0 0 15px rgba(171, 71, 188, 0.2); /* Glow mais forte */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Responsivo para mobile */
+    gap: 20px; /* Espaçamento entre itens */
+}
+
+.menu li {
+    position: relative; /* Para pseudo */
+    transition: transform 0.3s ease;
+}
+
+.menu li::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ab47bc; /* Linha roxa */
+    transform: scaleX(0); /* Escondida inicialmente */
+    transition: transform 0.3s ease;
+}
+
+.menu li:hover::before {
+    transform: scaleX(1); /* Expande linha no hover */
+}
+
+.menu li:hover {
+    transform: translateY(-2px); /* Elevação no hover */
+}
+
+.menu a {
+    color: #ab47bc; /* Roxo claro */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu a:hover {
+    color: #e1bee7; /* Roxo mais claro no hover */
+    text-shadow: 0 0 5px rgba(171, 71, 188, 0.5); /* Glow no texto */
+}
+
+.menu a:active {
+    color: #6a1b9a; /* Purple escuro ao clicar */
+}
+
+/* Main content - Expandido com grid e animações */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    gap: 30px; /* Espaçamento entre seções */
+    animation: mainFadeIn 1.5s ease-in-out; /* Fade-in para main */
+}
+
+/* Animação de fade-in para main */
+@keyframes mainFadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Seções (abas) - Expandido com overlays, animações e pseudo */
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Texto à esquerda, imagem à direita */
+    gap: 20px;
+    margin-bottom: 50px;
+    padding: 25px;
+    background-color: #1e1e1e; /* Fundo cinza escuro */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(171, 71, 188, 0.1); /* Sombra externa e glow interno roxo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Para overlays */
+    animation: sectionPulse 3s infinite alternate ease-in-out; /* Pulse sutil na seção */
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(171, 71, 188, 0.05), transparent); /* Overlay gradiente roxo sutil */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+section:hover::after {
+    opacity: 1; /* Ativa overlay no hover */
+}
+
+section:hover {
+    transform: translateY(-5px) scale(1.01); /* Elevação e zoom no hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(171, 71, 188, 0.2); /* Glow mais forte */
+    background-color: #2a1a3a; /* Muda para purple escuro no hover */
+}
+
+/* Animação de pulse para seções */
+@keyframes sectionPulse {
+    0% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(171, 71, 188, 0.1); }
+    100% { box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35), inset 0 0 12px rgba(171, 71, 188, 0.15); }
+}
+
+/* Títulos de seções - Expandido com gradiente e glow */
+h2 {
+    margin-bottom: 15px;
+    color: #ab47bc; /* Roxo claro para títulos */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 1.8em; /* Maior para impacto */
+    background: linear-gradient(135deg, #e1bee7, #ab47bc); /* Gradiente no texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px rgba(171, 71, 188, 0.3); /* Glow sutil */
+    transition: text-shadow 0.3s ease, font-size 0.3s ease;
+    grid-column: 1 / -1; /* Span full width in grid */
+}
+
+h2:hover {
+    text-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow mais forte */
+    font-size: 1.85em; /* Leve aumento no hover */
+}
+
+/* Imagens de seções - Expandido com efeitos e responsividade */
+.section-image {
+    grid-column: 2; /* Imagem na segunda coluna */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px auto 0 auto; /* Centraliza horizontalmente */
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5), 0 0 5px rgba(0, 0, 0, 0.3); /* Glow roxo e sombra black */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    display: block; /* Necessário para centralizar */
+    filter: brightness(1.05) saturate(1.1); /* Leve brilho e saturação */
+}
+
+.section-image:hover {
+    transform: scale(1.05) translateY(-3px); /* Zoom e elevação no hover */
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), 0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
+    filter: brightness(1.1) saturate(1.2); /* Aumenta efeitos */
+}
+
+/* Classe preguica para centralizar texto - Expandida com estilos adicionais */
+.preguica {
+    text-align: center;
+    margin-bottom: 15px; /* Espaçamento abaixo */
+    font-size: 1em;
+    color: #e0e0e0;
+    font-weight: 300; /* Leve para contraste */
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, font-size 0.3s ease, text-shadow 0.3s ease;
+}
+
+.preguica:hover {
+    color: #e1bee7; /* Roxo claro no hover para interatividade */
+    font-size: 1.05em; /* Leve aumento */
+    text-shadow: 0 0 5px rgba(171, 71, 188, 0.3); /* Glow sutil */
+}
+
+/* Listas e Tabelas (novas estilos para conteúdo adicionado) */
+.avisos-lista, .treinamentos-lista, .torneios-lista, .atualizacoes-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.avisos-lista li, .treinamentos-lista li, .torneios-lista li, .atualizacoes-lista li {
+    background: linear-gradient(135deg, #6a1b9a, #121212);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(171, 71, 188, 0.3);
+}
+
+.calendario-tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendario-tabela th, .calendario-tabela td {
+    border: 1px solid #ab47bc;
+    padding: 8px;
+    text-align: left;
+}
+
+.calendario-tabela th {
+    background: linear-gradient(135deg, #6a1b9a, #121212);
+}
+
+/* Formulário de Contato */
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contato-form label {
+    color: #ab47bc;
+}
+
+.contato-form input, .contato-form textarea {
+    padding: 10px;
+    background: #1e1e1e;
+    border: 1px solid #ab47bc;
+    color: #e0e0e0;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.contato-form input:focus, .contato-form textarea:focus {
+    border-color: #e1bee7;
+    box-shadow: 0 0 5px rgba(171, 71, 188, 0.5);
+}
+
+.contato-form button {
+    background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.contato-form button:hover {
+    background: linear-gradient(135deg, #e1bee7, #ab47bc);
+}
+
+/* Toggle Neon (minha adição para interatividade) */
+#neon-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5);
+    z-index: 11;
+    font-size: 1em;
+}
+
+body.neon-mode section {
+    box-shadow: 0 0 20px rgba(171, 71, 188, 0.8); /* Aumenta glow no modo neon */
+    animation: neonPulse 1.5s infinite alternate; /* Pulse neon extra */
+}
+
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 20px rgba(171, 71, 188, 0.8); }
+    100% { box-shadow: 0 0 30px rgba(171, 71, 188, 1); }
+}
+
+/* Footer com gradiente - Simplificado para corrigir bug de clicabilidade (removidas animações e pseudo-elementos) */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo/black mantido */
+    color: white;
+    margin-top: 30px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5); /* Sombra básica mantida */
+    font-size: 0.9em;
+    position: relative;
+    z-index: 1; /* Z-index baixo para não sobrepor conteúdo */
+    pointer-events: auto; /* Garante interatividade no footer inteiro */
+    transition: none; /* Remove transições para evitar delays em cliques */
+}
+
+footer p {
+    letter-spacing: 1px;
+    pointer-events: auto; /* Garante interatividade no parágrafo */
+    transition: none; /* Sem transições para cliques imediatos */
+}
+
+footer a {
+    color: #ab47bc;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer; /* Indica explicitamente que é clicável */
+    pointer-events: auto; /* Força clicabilidade no link */
+    position: relative;
+    z-index: 2; /* Acima de qualquer elemento no footer */
+    display: inline-block;
+    padding: 5px 10px; /* Padding para área de clique maior */
+    border-radius: 4px; /* Bordas suaves */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transições apenas em cor e fundo para feedback visual */
+}
+
+footer a:hover {
+    color: #e1bee7;
+    background-color: rgba(171, 71, 188, 0.2); /* Fundo roxo sutil no hover para destaque, mantendo gradiente base */
+    text-decoration: underline; /* Underline para feedback */
+}
+
+footer a:active {
+    transform: scale(0.98); /* Efeito de "pressione" ao clicar */
+}
+
+footer a:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ab47bc; /* Foco roxo para acessibilidade */
+}
+
+/* Media query para responsividade (mobile <768px) - Expandida com ajustes finos */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px; /* Reduz base para telas pequenas */
+    }
+
+    body {
+        padding: 10px; /* Menos padding em mobile */
+    }
+
+    header {
+        flex-direction: column; /* Empilha elementos em telas pequenas */
+        padding: 10px;
+    }
+
+    .header-center {
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2em; /* Reduz tamanho em mobile */
+        letter-spacing: 0.5px; /* Ajuste espaçamento */
+    }
+
+    .menu {
+        position: static; /* Remove sticky em mobile para evitar sobreposições */
+    }
+
+    .menu ul {
+        flex-direction: column; /* Empilha itens do menu */
+        gap: 10px; /* Menos gap */
+    }
+
+    .menu li {
+        margin: 10px 0; /* Ajuste margem */
+    }
+
+    .menu a {
+        font-size: 1em; /* Reduz tamanho do texto */
+    }
+
+    main {
+        margin: 20px auto; /* Ajuste margem */
+        gap: 20px; /* Menos gap entre seções */
+    }
+
+    section {
+        grid-template-columns: 1fr; /* Empilha em mobile */
+        padding: 15px; /* Reduz padding */
+        margin-bottom: 30px; /* Menos margem */
+    }
+
+    .section-image {
+        grid-column: 1;
+        width: 100%; /* Full-width em mobile para melhor visualização */
+        margin: 10px auto; /* Ajuste margem */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Reduz em mobile */
+    }
+
+    .preguica {
+        font-size: 0.9em; /* Reduz em mobile */
+    }
+
+    footer {
+        padding: 10px; /* Reduz em mobile */
+        font-size: 0.8em; /* Menor texto */
+    }
+
+    footer a {
+        padding: 8px 12px; /* Área de clique maior em mobile para dedos */
+    }
+
+    #neon-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px;
+    }
+}
+
+/* Media query para tablets (769px a 1024px) - Adicionada para refinamento intermediário */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        padding: 15px; /* Padding intermediário */
+    }
+
+    header {
+        padding: 12px 25px; /* Ajuste */
+    }
+
+    h1 {
+        font-size: 2.2em; /* Tamanho intermediário */
+    }
+
+    .menu ul {
+        gap: 15px; /* Ajuste gap */
+    }
+
+    section {
+        padding: 20px; /* Intermediário */
+    }
+
+    .section-image {
+        width: 60%; /* Ajuste largura para tablets */
+    }
+}
+
+/* Media query para desktops grandes (>1025px) - Adicionada para otimização em telas amplas */
+@media (min-width: 1025px) {
+    body {
+        padding: 30px; /* Mais padding em telas grandes */
+    }
+
+    main {
+        max-width: 1400px; /* Expande para telas grandes */
+    }
+
+    h1 {
+        font-size: 3em; /* Maior em desktops */
+    }
+
+    .menu li {
+        margin: 0 20px; /* Mais espaço */
+    }
+
+    section {
+        padding: 35px; /* Mais espaço interno */
+    }
+
+    .section-image {
+        width: 40%; /* Menor em telas grandes para layout amplo */
+    }
+}
+
+/* Media query para orientação landscape (ex: tablets horizontais) - Adicionada para versatilidade */
+@media (orientation: landscape) and (max-width: 1024px) {
+    .menu ul {
+        flex-direction: row; /* Mantém horizontal em landscape */
+        flex-wrap: nowrap; /* Evita wrap */
+        overflow-x: auto; /* Scroll horizontal se necessário */
+    }
+}
+
+/* Media query para high contrast mode (acessibilidade) - Adicionada para suporte */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #000000; /* Black puro para alto contraste */
+        color: #ffffff; /* Branco puro */
+    }
+
+    a {
+        text-decoration: underline; /* Underline sempre para visibilidade */
+    }
+}
+
+/* Media query para reduced motion (acessibilidade) - Desativa animações */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
