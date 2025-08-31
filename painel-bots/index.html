@@ -17,7 +17,7 @@
     </div>
     <div class="header-center">
       <h1>Painel de Bots</h1>
-      <p class="subtitle">Gerencie bots da Team Venus (versão front-end)</p>
+      <p class="subtitle">Gerencie o seu bot da Team Venus (front-end)</p>
     </div>
     <div class="header-right">
       <img src="../assets/foto-time.jpg" class="foto-circular" alt="Time Venus"/>
@@ -26,19 +26,18 @@
 
   <nav class="top-actions">
     <a class="btn" href="../index.html">⬅ Voltar ao Hub</a>
+    <!-- Quando integrar OAuth de verdade, troque CLIENT_ID e REDIRECT_URI -->
     <a class="btn primary" href="https://discord.com/api/oauth2/authorize?client_id=SEU_CLIENT_ID&redirect_uri=SEU_REDIRECT_URI_URL_ENCODED&response_type=code&scope=identify%20guilds" target="_blank" rel="noopener">Entrar com Discord</a>
   </nav>
 
   <main>
     <section class="panel">
       <div class="panel-header">
-        <h2>Bots</h2>
-        <div class="tools">
-          <input type="search" id="search" placeholder="Buscar bot por nome..."/>
-        </div>
+        <h2>Seu Bot</h2>
       </div>
 
       <div id="bots-grid" class="grid">
+        <!-- Edite o nome e o id do bot abaixo -->
         <article class="bot-card" data-name="Venus Mod">
           <div class="row">
             <h3>Venus Mod</h3>
@@ -49,32 +48,11 @@
             <button class="btn outline manage" data-bot="venus_mod">Gerenciar</button>
           </div>
         </article>
-
-        <article class="bot-card" data-name="Scrim Helper">
-          <div class="row">
-            <h3>Scrim Helper</h3>
-            <span class="status idle">Idle</span>
-          </div>
-          <p class="desc">Organização de scrims e horários.</p>
-          <div class="actions">
-            <button class="btn outline manage" data-bot="scrim_helper">Gerenciar</button>
-          </div>
-        </article>
-
-        <article class="bot-card" data-name="Stats Tracker">
-          <div class="row">
-            <h3>Stats Tracker</h3>
-            <span class="status offline">Offline</span>
-          </div>
-          <p class="desc">Estatísticas e métricas de partidas.</p>
-          <div class="actions">
-            <button class="btn outline manage" data-bot="stats_tracker">Gerenciar</button>
-          </div>
-        </article>
       </div>
     </section>
   </main>
 
+  <!-- Modal de Gerenciamento (mock) -->
   <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <div class="modal-header">
