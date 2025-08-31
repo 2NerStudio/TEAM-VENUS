@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel de Bots - Team Venus</title>
+  <link rel="icon" href="../assets/pfp.png" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <a href="https://discord.gg/zsFae5QFPk" target="_blank" aria-label="Discord Team Venus">
+        <img src="../assets/discord-icon.png" alt="Discord" class="discord-icon"/>
+      </a>
+    </div>
+    <div class="header-center">
+      <h1>Painel de Bots</h1>
+      <p class="subtitle">Gerencie bots da Team Venus (versão front-end)</p>
+    </div>
+    <div class="header-right">
+      <img src="../assets/foto-time.jpg" class="foto-circular" alt="Time Venus"/>
+    </div>
+  </header>
+
+  <nav class="top-actions">
+    <a class="btn" href="../index.html">⬅ Voltar ao Hub</a>
+    <a class="btn primary" href="https://discord.com/api/oauth2/authorize?client_id=SEU_CLIENT_ID&redirect_uri=SEU_REDIRECT_URI_URL_ENCODED&response_type=code&scope=identify%20guilds" target="_blank" rel="noopener">Entrar com Discord</a>
+  </nav>
+
+  <main>
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Bots</h2>
+        <div class="tools">
+          <input type="search" id="search" placeholder="Buscar bot por nome..."/>
+        </div>
+      </div>
+
+      <div id="bots-grid" class="grid">
+        <article class="bot-card" data-name="Venus Mod">
+          <div class="row">
+            <h3>Venus Mod</h3>
+            <span class="status online">Online</span>
+          </div>
+          <p class="desc">Moderação e automações de chat.</p>
+          <div class="actions">
+            <button class="btn outline manage" data-bot="venus_mod">Gerenciar</button>
+          </div>
+        </article>
+
+        <article class="bot-card" data-name="Scrim Helper">
+          <div class="row">
+            <h3>Scrim Helper</h3>
+            <span class="status idle">Idle</span>
+          </div>
+          <p class="desc">Organização de scrims e horários.</p>
+          <div class="actions">
+            <button class="btn outline manage" data-bot="scrim_helper">Gerenciar</button>
+          </div>
+        </article>
+
+        <article class="bot-card" data-name="Stats Tracker">
+          <div class="row">
+            <h3>Stats Tracker</h3>
+            <span class="status offline">Offline</span>
+          </div>
+          <p class="desc">Estatísticas e métricas de partidas.</p>
+          <div class="actions">
+            <button class="btn outline manage" data-bot="stats_tracker">Gerenciar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Gerenciar Bot</h3>
+        <button class="close" aria-label="Fechar modal">✖</button>
+      </div>
+      <div class="modal-body">
+        <form id="bot-form">
+          <label>Prefixo do bot
+            <input type="text" name="prefix" placeholder="!" required/>
+          </label>
+
+          <label>Status
+            <select name="presence">
+              <option value="online">Online</option>
+              <option value="idle">Idle</option>
+              <option value="dnd">Não perturbe</option>
+              <option value="offline">Offline</option>
+            </select>
+          </label>
+
+          <label>Responder menções
+            <input type="checkbox" name="mentions" checked/>
+          </label>
+
+          <label>Volume (se aplicável)
+            <input type="range" name="volume" min="0" max="100" value="70"/>
+          </label>
+
+          <div class="modal-actions">
+            <button type="button" class="btn" id="cancel">Cancelar</button>
+            <button type="submit" class="btn primary">Salvar</button>
+          </div>
+        </form>
+        <p class="hint">Obs.: Mock no front-end. Integração real exige backend + OAuth do Discord.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Team Venus. <a href="../index.html">Voltar ao Hub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
