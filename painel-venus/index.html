@@ -1,0 +1,119 @@
+@ -1,29 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Venus - Rocket League</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet"> <!-- Fontes: Montserrat e Orbitron para o título -->
+
+    <!-- Ícone do site -->
+    <link rel="icon" href="assets/pfp.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="https://discord.gg/zsFae5QFPk" target="_blank"> <!-- Link real do Discord -->
+                <img src="assets/discord-icon.png" alt="Ícone do Discord" class="discord-icon">
+            </a>
+        </div>
+        <div class="header-center">
+            <h1>Team Venus</h1>
+        </div>
+        <div class="header-right">
+            <img src="assets/foto-time.jpg" alt="Foto do Time" class="foto-circular"> <!-- Atualizado para pasta assets -->
+        </div>
+    </header>
+<!-- ADSTERRA: Leaderboard topo (desktop) -->
+    <div class="ad-slot leaderboard only-desktop" aria-label="Publicidade">
+    <span class="ad-label">Anúncio</span>
+    <script data-cfasync="false" type="text/javascript">
+        atOptions = {
+        'key' : 'YOUR_LEADERBOARD_KEY',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+        };
+        document.write('<script type="text/javascript" src="https://www.highperformanceformat.com/'+atOptions.key+'/invoke.js"><\/script>');
+    </script>
+    </div>
+
+    <!-- ADSTERRA: Banner topo (mobile) -->
+    <div class="ad-slot mobile-banner only-mobile" aria-label="Publicidade">
+    <span class="ad-label">Anúncio</span>
+    <script data-cfasync="false" type="text/javascript">
+        atOptions = {
+        'key' : 'YOUR_MOBILE_BANNER_KEY',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+        };
+        document.write('<script type="text/javascript" src="https://www.highperformanceformat.com/'+atOptions.key+'/invoke.js"><\/script>');
+    </script>
+    </div>
+
+    <!-- Seção para o banner animado, abaixo do header -->
+    <div class="banner">
+@ -40,7 +69,20 @@
+            <a href="https://discord.gg/zsFae5QFPk" target="_blank" class="btn-discord">Entre no Discord Agora!</a> <!-- Link real do Discord -->
+            <!-- Espaço para mais conteúdo sobre o time, se necessário -->
+        </section>
+
+            <!-- ADSTERRA: Retângulo in-content -->
+            <div class="ad-slot rectangle" aria-label="Publicidade">
+            <span class="ad-label">Anúncio</span>
+            <script data-cfasync="false" type="text/javascript">
+                atOptions = {
+                'key' : 'YOUR_RECTANGLE_KEY',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+                };
+                document.write('<script type="text/javascript" src="https://www.highperformanceformat.com/'+atOptions.key+'/invoke.js"><\/script>');
+            </script>
+            </div>
+        <section id="links"> <!-- Seção renomeada para Formulário de Entrada -->
+            <h2>Formulário de Entrada</h2>
+            <p class="preguica">Preencha o formulário abaixo para se candidatar à área profissional da Team Venus! Clique na imagem para acessar.</p>
+@ -80,9 +122,37 @@
+            <a href="https://team-venus-avisos.vercel.app/" target="_blank" class="btn-avisos">Acesse o Site de Avisos</a> <!-- Placeholder: Substitua pelo link real quando criar o site -->
+        </section>
+    </main>
+        <!-- ADSTERRA: Leaderboard pré-rodapé (desktop) -->
+        <div class="ad-slot footer-banner only-desktop" aria-label="Publicidade">
+        <span class="ad-label">Anúncio</span>
+        <script data-cfasync="false" type="text/javascript">
+            atOptions = {
+            'key' : 'YOUR_FOOTER_LEADERBOARD_KEY',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+            };
+            document.write('<script type="text/javascript" src="https://www.highperformanceformat.com/'+atOptions.key+'/invoke.js"><\/script>');
+        </script>
+        </div>
+
+        <!-- ADSTERRA: Banner pré-rodapé (mobile) -->
+        <div class="ad-slot mobile-banner only-mobile" aria-label="Publicidade">
+        <span class="ad-label">Anúncio</span>
+        <script data-cfasync="false" type="text/javascript">
+            atOptions = {
+            'key' : 'YOUR_FOOTER_MOBILE_KEY',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+            };
+            document.write('<script type="text/javascript" src="https://www.highperformanceformat.com/'+atOptions.key+'/invoke.js"><\/script>');
+        </script>
+        </div>
+    <footer>
+        <p>&copy; 2025 Team Venus. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
