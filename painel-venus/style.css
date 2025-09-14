@@ -330,8 +330,8 @@ h2:hover {
     display: block;
     margin: 0 auto; /* Centraliza a imagem */
     border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5), 0 0 5px rgba(0, 0, 0, 0.3); /* Glow roxo e sombra black */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 0 10px rgba(80, 0, 73, 0.5), 0 0 5px rgba(0, 0, 0, 0.3); /* Glow roxo e sombra black */
+    transition: transform 0.2s ease, box-shadow 0.3s ease, filter 0.3s ease;
     cursor: pointer; /* Indica clicável */
     margin-top: 15px; /* Espaçamento acima */
     filter: brightness(1.05); /* Leve brilho */
@@ -339,7 +339,7 @@ h2:hover {
 
 .form-image:hover {
     transform: scale(1.02) translateY(-3px); /* Zoom e elevação no hover */
-    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8), 0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
+    box-shadow: 0 0 15px rgba(225, 173, 235, 0.8), 0 0 10px rgba(0, 0, 0, 0.4); /* Glow mais forte */
     filter: brightness(1.1); /* Aumenta brilho */
 }
 
